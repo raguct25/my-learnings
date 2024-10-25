@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Speech API Example</title>
+  </head>
+  <body>
+    <!-- <h1>Speech Recognition and Synthesis Example</h1>
+
+    <button onclick="startSpeechRecognition()">Start Speech Recognition</button>
+    <button onclick="stopSpeechRecognition()">Stop Speech Recognition</button> -->
+
+    <div id="recognized-text"></div>
+
+    <h2>Text to Speech</h2>
+    <input type="text" id="text-to-speak" placeholder="Enter text" />
+    <button onclick="startTextToSpeech()">Speak</button>
+
+    <script>
+      const recognition =
+        new webkitSpeechRecognition() || new SpeechRecognition();
+      recognition.lang = "en-US";
+
+      recognition.onresult = function (event) {
+        const result = event.results[event.resultIndex][0].transcript;
+        document.getElementById(
+          "recognized-text"
+        ).innerHTML = `You said: ${result}`;
+      };
+
+      function startSpeechRecognition() {
+        recognition.start();
+      }
+
+      function stopSpeechRecognition() {
+        recognition.stop();
+      }
+
+      function startTextToSpeech() {
+        const textToSpeak = document.getElementById("text-to-speak").value;
+        const synth = window.speechSynthesis;
+
+        const utterance = new SpeechSynthesisUtterance(textToSpeak);
+        synth.speak(utterance);
+      }
+    </script>
+  </body>
+</html>
