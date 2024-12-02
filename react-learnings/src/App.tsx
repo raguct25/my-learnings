@@ -1,12 +1,13 @@
-import "./App.css";
-import FetchComponent from "./fetch-component/FetchComponent";
+// import FetchComponent from "./fetch-component/FetchComponent";
+import HeaderComponent from "./ProjectComponents/HeaderComponent";
 import FacebookComponent from "./meta/FacebookComponent";
 
 function App() {
   return (
-    <div className="App">
-      {/* <FetchComponent /> */}
+    <div className="bg-slate-100 h-screen">
+      <HeaderComponent />
       <FacebookComponent />
+      {/* <FetchComponent /> */}
     </div>
   );
 }
