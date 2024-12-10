@@ -49,10 +49,12 @@ const FacebookLogin: React.FC = () => {
       document.body.appendChild(script);
 
       script.onload = () => {
+        console.log("scrpit onload called");
+
         // Initialize the Facebook SDK
         window.fbAsyncInit = () => {
           window.FB.init({
-            appId: "1063687218746132", // Replace with your App ID
+            appId: "523248367376961", // Replace with your App ID
             autoLogAppEvents: true,
             xfbml: true,
             version: "v21.0", // Replace with the Graph API version you want to use
@@ -93,9 +95,9 @@ const FacebookLogin: React.FC = () => {
   const fbLoginCallback = (response: FBLoginResponse) => {
     if (response.authResponse) {
       const code = response.authResponse.code;
-      console.log("response: ", code); // Handle successful login
+      console.log("Success response: ", code); // Handle successful login
     } else {
-      console.log("response: ", response); // Handle login failure
+      console.log("Failure response: ", response); // Handle login failure
     }
   };
 
@@ -103,7 +105,7 @@ const FacebookLogin: React.FC = () => {
   const launchWhatsAppSignup = () => {
     if (window.FB) {
       window.FB.login(fbLoginCallback, {
-        config_id: "585651800605940", // Replace with your configuration ID
+        config_id: "933477678757678", // Replace with your configuration ID
         response_type: "code",
         override_default_response_type: true,
         extras: {
