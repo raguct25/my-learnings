@@ -1,14 +1,33 @@
 // import FetchComponent from "./fetch-component/FetchComponent";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HeaderComponent from "./ProjectComponents/HeaderComponent";
 import FacebookComponent from "./meta/FacebookComponent";
+import PracticeComponent from "./practice-component/PracticeComponent";
+import DefaultComponent from "./RouteComponents/DefaultComponent/DefaultComponent";
+import { ChildComponent } from "./RouteComponents/ChildComponent/ChildComponent";
+import DynamicComponent from "./DynamicComponents/DynamicComponent";
+import TextStyleDynamic from "./DynamicComponents/TextStyleDynamic";
+import InputPhoneComponent from "./InputPhoneComponent/InputPhoneComponent";
+import CarouselComponent from "./CarouselComponent/CarouselComponent";
 
 function App() {
   return (
-    <div className="bg-slate-100 h-screen">
-      <HeaderComponent />
-      <FacebookComponent />
+    <>
+      {/* <HeaderComponent /> */}
+      {/* <FacebookComponent /> */}
       {/* <FetchComponent /> */}
-    </div>
+      {/* <PracticeComponent /> */}
+      {/* <Router>
+        <Routes>
+          <Route path="/" element={<DefaultComponent />} />
+          <Route path="/child" element={<ChildComponent />} />
+        </Routes>
+      </Router> */}
+      {/* <DynamicComponent /> */}
+      {/* <TextStyleDynamic />
+      <InputPhoneComponent /> */}
+      <CarouselComponent />
+    </>
   );
 }
 

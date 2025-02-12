@@ -1,0 +1,15 @@
+[
+  {
+    "type": "TEXTS",
+    "content": "This is a sample text area."
+  },
+  {
+    "type": "IMAGE",
+    "src": "https://via.placeholder.com/150",
+    "alt": "Sample Image"
+  },
+  {
+    "type": "TEXT",
+    "content": "Another text section for demonstration."
+  }
+]
