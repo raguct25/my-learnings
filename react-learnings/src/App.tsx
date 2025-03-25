@@ -9,6 +9,9 @@ import DynamicComponent from "./DynamicComponents/DynamicComponent";
 import TextStyleDynamic from "./DynamicComponents/TextStyleDynamic";
 import InputPhoneComponent from "./InputPhoneComponent/InputPhoneComponent";
 import CarouselComponent from "./CarouselComponent/CarouselComponent";
+import SsrComponent from "./SSRComponents/SsrComponent";
+import DatePickerComponent from "./DatePickerComponent/DatePickerComponent";
+import LocationComponent from "./LocationComponet/LocationComponent";
 
 function App() {
   return (
@@ -24,9 +27,12 @@ function App() {
         </Routes>
       </Router> */}
       {/* <DynamicComponent /> */}
-      {/* <TextStyleDynamic />
-      <InputPhoneComponent /> */}
-      <CarouselComponent />
+      {/* <TextStyleDynamic /> */}
+      {/* <InputPhoneComponent /> */}
+      {/* <CarouselComponent /> */}
+      {/* <SsrComponent /> */}
+      {/* <DatePickerComponent /> */}
+      <LocationComponent />
     </>
   );
 }
