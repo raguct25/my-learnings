@@ -46,10 +46,13 @@
 // export default LocationComponent;
 
 import React, { useState, useEffect } from "react";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 function LocationComponent() {
   const [locationData, setLocationData] = useState<any>(null);
   const [locationError, setLocationError] = useState<any>(null);
+
+  const position: [number, number] = [11.0205666, 77.0254896];
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -70,20 +73,33 @@ function LocationComponent() {
   }, []);
 
   return (
-    <div>
-      {locationError && (
-        <div>
-          <p>Error getting location:</p>
-          <pre>{JSON.stringify(locationError, null, 2)}</pre>
-        </div>
-      )}
-      {locationData && (
-        <div>
-          <p>Latitude: {locationData.coords.latitude}</p>
-          <p>Longitude: {locationData.coords.longitude}</p>
-        </div>
-      )}
-    </div>
+    // <div>
+    //   {locationError && (
+    //     <div>
+    //       <p>Error getting location:</p>
+    //       <pre>{JSON.stringify(locationError, null, 2)}</pre>
+    //     </div>
+    //   )}
+    //   {locationData && (
+    //     <div>
+    //       <p>Latitude: {locationData.coords.latitude}</p>
+    //       <p>Longitude: {locationData.coords.longitude}</p>
+    //     </div>
+    //   )}
+    // </div>
+    <>
+      <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker position={position}>
+          <Popup>
+            A pretty CSS3 popup. <br /> Easily customizable.
+          </Popup>
+        </Marker>
+      </MapContainer>
+    </>
   );
 }
 

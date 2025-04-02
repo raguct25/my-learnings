@@ -12,6 +12,8 @@ import CarouselComponent from "./CarouselComponent/CarouselComponent";
 import SsrComponent from "./SSRComponents/SsrComponent";
 import DatePickerComponent from "./DatePickerComponent/DatePickerComponent";
 import LocationComponent from "./LocationComponet/LocationComponent";
+import LocationCard from "./LocationComponet/MapComponent";
+import MapComponent from "./LocationComponet/MapComponent";
 
 function App() {
   return (
@@ -32,7 +34,8 @@ function App() {
       {/* <CarouselComponent /> */}
       {/* <SsrComponent /> */}
       {/* <DatePickerComponent /> */}
-      <LocationComponent />
+      {/* <LocationComponent /> */}
+      <MapComponent />
     </>
   );
 }

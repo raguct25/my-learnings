@@ -1,5 +1,4 @@
 import logo from "../assets/copper.png";
-import { RxExternalLink } from "react-icons/rx";
 import { PLAN_DETAILS, WHATSAPP_API_STATUS } from "../helpers/constant";
 
 const HeaderComponent = () => {
@@ -28,7 +27,7 @@ const HeaderComponent = () => {
               className="flex items-center bg-green-500 text-white font-medium  max-md:py-1  max-md:px-2 py-2 px-4 rounded-md hover:bg-green-700 transition duration-200 max-md:justify-center max-md:mt-2"
               onClick={applyNow}
             >
-              <RxExternalLink className="h-5 w-5" />
+              {/* <RxExternalLink className="h-5 w-5" /> */}
               <span className="ml-1">Apply Now</span>
             </button>
           </div>
